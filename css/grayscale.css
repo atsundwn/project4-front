@@ -373,11 +373,10 @@ body {
 }
 
 
-
 #login-dp{
     min-width: 250px;
     padding: 14px 14px 0;
-    overflow:hidden;
+    overflow: hidden;
     background-color:rgba(150,150,150,.6);
 }
 #login-dp .help-block{
@@ -386,33 +385,11 @@ body {
 #login-dp .bottom{
     background-color:rgba(150,150,150,.6);
     border-top:1px solid #ddd;
-    clear:both;
+    clear: both;
     padding:14px;
-}
-#login-dp .social-buttons{
-    margin:12px 0
-}
-#login-dp .social-buttons a{
-    width: 49%;
 }
 #login-dp .form-group {
     margin-bottom: 10px;
-}
-.btn-fb{
-    color: #fff;
-    background-color:#3b5998;
-}
-.btn-fb:hover{
-    color: #fff;
-    background-color:#496ebc
-}
-.btn-tw{
-    color: #fff;
-    background-color:#55acee;
-}
-.btn-tw:hover{
-    color: #fff;
-    background-color:#59b5fa;
 }
 @media(max-width:768px){
     #login-dp{
@@ -423,4 +400,7 @@ body {
         background-color: inherit;
         border-top:0 none;
     }
+}
+#divLogin {
+    padding-bottom: 10px;
 }

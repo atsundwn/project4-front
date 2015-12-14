@@ -1,7 +1,7 @@
 'use strict';
 
 var api = {
-  url: 'http://locahost:3000',
+  url: 'http://localhost:3000',
 
   ajax: function(config, cb) {
     $.ajax(config).done(function(data, textStatus, jqxhr) {
@@ -11,20 +11,20 @@ var api = {
     });
   },
 
-  register: function register(credentials, callback) {
+  register: function (credentials, callback) {
     this.ajax({
       method: 'POST',
-      url: this.cof + '/register',
+      url: this.url + '/register',
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify(credentials),
       dataType: 'json'
     }, callback);
   },
 
-  login: function login(credentials, callback) {
+  login: function (credentials, callback) {
     this.ajax({
       method: 'POST',
-      url: this.cof + '/login',
+      url: this.url + '/login',
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify(credentials),
       dataType: 'json'
@@ -36,7 +36,7 @@ var api = {
   logout: function (id, token, callback) {
     this.ajax({
       method: 'DELETE',
-      url: this.cof + '/logout/' + id,
+      url: api.url + '/logout/' + id,
       headers: {
         Authorization: 'Token token=' + token
       },
