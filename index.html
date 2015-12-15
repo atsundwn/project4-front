@@ -22,6 +22,8 @@
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
+    <script src="datetimepicker_css.js"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -198,6 +200,24 @@
             </div>
         </div>
     </section>
+
+    <!-- Pop Up Reminders Div -->
+
+    <div id="reminder">
+        <h2>My Reminders</h2>
+
+            <div id='reminderInput'>
+            <form id="reminderForm">
+              <div style="text-align:center; margin:150px auto 100px auto;">
+                 <input name="message" type="text" id="inputMessage" placeholder="Message" required>
+                 <label for="remind">Please enter a date here &gt;&gt; </label>
+                 <input name="datetime" type="text" id="remind" maxlength="25" size="25" required/>
+                 <img src="images2/cal.gif" onclick="javascript:NewCssCal ('remind','MMddyyyy','arrow',true,'12', false, 'future')" style="cursor:pointer"/>
+                 <button type="submit">Submit</button>
+               </div>
+            </form>
+          </div>
+    </div>
 
     <!-- Footer -->
     <footer>
