@@ -8,6 +8,7 @@ var ux = {
     $('#reminderButton').hide();
     $('#logoutButton').hide();
     $('#reminder').hide();
+    $('.edit').hide();
   },
 
   register: function () {

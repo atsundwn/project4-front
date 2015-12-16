@@ -31,12 +31,20 @@ var api = {
     }, callback);
   },
 
-  indexReminder: function(user_id, callback) {
+  indexReminder: function (user_id, callback) {
     this.ajax({
       method: 'GET',
       url: this.url + '/reminders/?user_id=' + user_id,
       contentType: 'application/json'
       //dataType: 'json'
+    }, callback);
+  },
+
+  showReminder: function (reminder_id, callback) {
+    this.ajax({
+      methosd: 'GET',
+      url: this.url + '/reminders/' + reminder_id,
+      dataType: 'json'
     }, callback);
   },
 
@@ -64,14 +72,14 @@ var api = {
     }, callback);
   },
 
-  updateReminder: function (id, data, token, callback) {
+  updateReminder: function (reminder_id, data, token, callback) {
     this.ajax({
       method: 'PATCH',
-      url: this.url + '/reminders/' + id,
+      url: this.url + '/reminders/' + reminder_id,
       headers: {
         Authorization: 'Token token=' + token
       },
-      data: JSON.stringify(data),
+      data: data,
       dataType: 'json'
     }, callback);
   },

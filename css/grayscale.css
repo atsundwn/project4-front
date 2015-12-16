@@ -445,3 +445,28 @@ body {
 .tableheader {
     text-align: center;
 }
+.edit {
+    border: solid 4px #42dca3;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background-color: black;
+    z-index: 100;
+
+    height: 300px;
+    margin-top: -150px;
+
+    width: 900px;
+    margin-left: -450px;
+    text-align: center;
+}
+#editMsg {
+    padding: 20px;
+    margin: 0;
+}
+#editMessage {
+    width: 30%;
+}
+#editDatetime {
+    width: 20%;
+}

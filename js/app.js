@@ -3,7 +3,8 @@
 var user = {
   id: null,
   token: null,
-  phone_number: null
+  phone_number: null,
+  reminder_id: null
 };
 
 // Useful functions
@@ -75,12 +76,28 @@ $(document).ready(function () {
   // Click handler for Reminder table
   $('#allReminders').on('click', function (e) {
     e.preventDefault();
-    var reminder_id = $(e.target).data('reminder-id');
+    user.reminder_id = $(e.target).data('reminder-id');
     var button = $(e.target).data('button');
 
     if (button === 'delete') {
-      api.destroyReminder(reminder_id, user.token, cb.deleteReminderCB);
+      api.destroyReminder(user.reminder_id, user.token, cb.deleteReminderCB);
+    } else if (button === 'edit') {
+      api.showReminder(user.reminder_id, cb.showReminderCB);
     }
+  });
+
+  // Cancel button on edit reminder div
+  $('#cancelEdit').on('click', function (e) {
+    e.preventDefault();
+    $('.edit').hide();
+  });
+
+  // Submit button on edit reminder div
+  $('#editReminder').on('submit', function (e) {
+    e.preventDefault();
+    var reminder = wrap('reminder', form2object(this));
+    console.log(reminder);
+    api.updateReminder(user.reminder_id, reminder, user.token, cb.updateReminderCB);
   });
 
 

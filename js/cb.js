@@ -79,6 +79,28 @@ var cb = {
       console.log('Successfully deleted item');
       api.indexReminder(user.id, cb.indexReminderCB);
     }
+  },
+
+  showReminderCB: function (err, data) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(data);
+      $('#editMessage').val(data.message);
+      $('#editDatetime').val(data.send_date);
+      $('.edit').show();
+    }
+  },
+
+  updateReminderCB: function (err, data) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("Successfully updated item");
+      api.indexReminder(user.id, cb.indexReminderCB);
+      $('#editReminder').find('input').val('');
+      $('.edit').hide();
+    }
   }
 
 };
