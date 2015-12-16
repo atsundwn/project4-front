@@ -6,7 +6,7 @@ var cb = {
   reminderTemplate: function(){},
 
   init: function(){
-    Handlebars.registerHelper('ifSomeField', function (conditionalVariable, options){
+    Handlebars.registerHelper('ifSent', function (conditionalVariable, options){
       if (conditionalVariable === options.hash.value) {
         return options.fn(this);
       } else {
@@ -25,6 +25,7 @@ var cb = {
     } else {
       console.log(data);
       $('#register-nav').find('input').val('');
+      ux.login();
     }
   },
 
@@ -56,6 +57,7 @@ var cb = {
       console.log(err);
     } else {
       console.log(data);
+      $('#reminderForm').find('input').val('');
       api.indexReminder(user.id, cb.indexReminderCB);
     }
   },

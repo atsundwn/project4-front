@@ -242,18 +242,23 @@
                       <script id="reminders-index" type="text/x-handlebars-template">
                           {{#each reminders}}
                           <tr>
-                            <td><button data-reminder-id={{id}} data-button="rate" type="button" class="btn btn-edit">Edit</button></td>
+                            <td>{{#ifSent sent? value=false}}<button data-reminder-id={{id}} data-button="edit" type="button" class="btn btn-edit">Edit</button>
+                                {{else}}
+                                <button data-button="sent" type="button" class="btn btn-default">SENT</button>
+                                {{/ifSent}}
+                            </td>
                             <td>{{message}}</td>
                             <td>{{send_date}}</td>
-                            <td><button data-reminder-id={{id}} data-button="result" type="button" class="btn btn-delete">Delete</button></td>
+                            <td>{{#ifSent sent? value=false}}<button data-reminder-id={{id}} data-button="delete" type="button" class="btn btn-delete">X</button>
+                                {{else}}
+                                <button data-button="sent" type="button" class="btn btn-default">SENT</button>
+                                {{/ifSent}}
+                            </td>
                           </tr>
                           {{/each}}
                       </script>
                     </tbody>
                 </table>
-
-
-
         </div>
     </section>
 

@@ -11,18 +11,21 @@ var ux = {
   },
 
   register: function () {
-    $('#registerMenu').show();
     $('#loginMenu').hide();
+    $('#registerMenu').show();
+    setTimeout(function () {$('#registerMenu').attr('class', 'dropdown open')}, 200);
   },
 
   login: function () {
     $('#registerMenu').hide();
     $('#loginMenu').show();
+    setTimeout( function () {$('#loginMenu').attr('class', 'dropdown open')}, 200);
   },
 
   afterLogin: function () {
     $('#reminderButton').show();
     $('#logoutButton').show();
     $('#reminder').show();
+    $('#loginMenu').attr('class', 'dropdown');
   }
 };
