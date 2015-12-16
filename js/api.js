@@ -36,10 +36,34 @@ var api = {
   logout: function (id, token, callback) {
     this.ajax({
       method: 'DELETE',
-      url: api.url + '/logout/' + id,
+      url: this.url + '/logout/' + id,
       headers: {
         Authorization: 'Token token=' + token
       },
     }, callback);
-  }
+  },
+
+  createReminder: function (data, token, callback) {
+    this.ajax({
+      method: 'POST',
+      url: this.url + '/reminders',
+      headers: {
+        Authorization: 'Token token=' + token
+      },
+      data: JSON.stringify(data),
+      dataType: 'json'
+    }, callback);
+  },
+
+  updateReminder: function (id, data, token, callback) {
+    this.ajax({
+      method: 'PATCH',
+      url: this.cof + '/reminders/' + id,
+      headers: {
+        Authorization: 'Token token=' + token
+      },
+      data: JSON.stringify(data),
+      dataType: 'json'
+    }, callback);
+  },
 };

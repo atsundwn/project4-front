@@ -63,6 +63,12 @@
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
+                    <li>
+                        <a class="page-scroll" id="reminderButton" href="#reminder">My Reminders</a>
+                    </li>
+                    <li>
+                        <a id="logoutButton" href="#logout">Logout</a>
+                    </li>
 
 
                     <li id="registerMenu" class="dropdown">
@@ -145,7 +151,7 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Remind Me</h1>
-                        <p class="intro-text">A Free, SMS Reminder App for Everyone.<br>Created by Minsup Ko.</p>
+                        <p class="intro-text">A SMS Reminder App<br>For Everyone.</p>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -160,7 +166,8 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>About Remind Me</h2>
-                <p>Remind Me is a free web app that can send you custom reminder sms messages.</p>
+                <p>Remind Me is a free web app that can send you custom reminder SMS messages.</p><br>
+                <p>Use this app to remind yourself of important events!</p>
             </div>
         </div>
     </section>
@@ -191,7 +198,7 @@
                         <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                     </li>
                     <li>
-                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        <a href="https://github.com/atsundwn" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
                     </li>
                     <li>
                         <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
@@ -203,21 +210,50 @@
 
     <!-- Pop Up Reminders Div -->
 
-    <div id="reminder">
-        <h2>My Reminders</h2>
+    <section id="reminder" class="container content-section text-center">
+        <div class="row">
+            <h2>My Reminders</h2>
 
-            <div id='reminderInput'>
-            <form id="reminderForm">
-              <div style="text-align:center; margin:150px auto 100px auto;">
-                 <input name="message" type="text" id="inputMessage" placeholder="Message" required>
-                 <label for="remind">Please enter a date here &gt;&gt; </label>
-                 <input name="datetime" type="text" id="remind" maxlength="25" size="25" required/>
-                 <img src="images2/cal.gif" onclick="javascript:NewCssCal ('remind','MMddyyyy','arrow',true,'12', false, 'future')" style="cursor:pointer"/>
-                 <button type="submit">Submit</button>
-               </div>
-            </form>
-          </div>
-    </div>
+                <div id='reminderInput'>
+                    <form id="reminderForm">
+                      <div style="text-align:center; margin:150px auto 100px auto;">
+                         <input name="message" type="text" id="inputMessage" placeholder="Message" required>
+                         <label for="remind">Please enter a date here &gt;&gt; </label>
+                         <input name="datetime" type="text" id="remind" maxlength="25" size="25" placeholder="Date" required/>
+                         <img src="images2/cal.gif" onclick="javascript:NewCssCal ('remind','MMddyyyy','arrow',true,'12', false, 'future')" style="cursor:pointer"/>
+                         <button type="submit">Submit</button>
+                       </div>
+                    </form>
+                </div>
+
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th class="tableheader">Edit</th>
+                        <th class="tableheader">Message</th>
+                        <th class="tableheader">Send Date</th>
+                        <th class="tableheader">Delete</th>
+                      </tr>
+                    </thead>
+
+                    <tbody id='allReminders'>
+                      <script id="reminders-index" type="text/x-handlebars-template">
+                          {{#each reminders}}
+                          <tr>
+                            <td><button data-reminder-id={{id}} data-button="rate" type="button" class="btn btn-success ratedbtn">Edit</button></td>
+                            <td>{{message}}</td>
+                            <td>{{send_date}}</td>
+                            <td><button data-reminder-id={{id}} data-button="result" type="button" class="btn btn-warning">Delete</button></td>
+                          </tr>
+                          {{/each}}
+                      </script>
+                    </tbody>
+                </table>
+
+
+
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>

@@ -378,6 +378,7 @@ body {
     padding: 14px 14px 0;
     overflow: hidden;
     background-color:rgba(150,150,150,.6);
+    color: black;
 }
 #login-dp .help-block{
     font-size:12px
@@ -406,4 +407,7 @@ body {
 }
 #inputMessage, #remind {
     color: black;
+}
+#inputMessage {
+    width: 40%;
 }
