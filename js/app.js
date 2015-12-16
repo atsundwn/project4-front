@@ -72,5 +72,16 @@ $(document).ready(function () {
     api.createReminder(reminder, user.token, cb.createReminderCB);
   });
 
+  // Click handler for Reminder table
+  $('#allReminders').on('click', function (e) {
+    e.preventDefault();
+    var reminder_id = $(e.target).data('reminder-id');
+    var button = $(e.target).data('button');
+
+    if (button === 'delete') {
+      api.destroyReminder(reminder_id, user.token, cb.deleteReminderCB);
+    }
+  });
+
 
 });

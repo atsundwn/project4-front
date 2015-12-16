@@ -70,6 +70,15 @@ var cb = {
       var rowHTML = cb.reminderTemplate({reminders: data.reminders});
       $("#allReminders").html(rowHTML);
     }
+  },
+
+  deleteReminderCB: function (err, data) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('Successfully deleted item');
+      api.indexReminder(user.id, cb.indexReminderCB);
+    }
   }
 
 };

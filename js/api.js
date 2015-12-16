@@ -67,7 +67,7 @@ var api = {
   updateReminder: function (id, data, token, callback) {
     this.ajax({
       method: 'PATCH',
-      url: this.cof + '/reminders/' + id,
+      url: this.url + '/reminders/' + id,
       headers: {
         Authorization: 'Token token=' + token
       },
@@ -75,4 +75,15 @@ var api = {
       dataType: 'json'
     }, callback);
   },
+
+  destroyReminder: function (id, token, callback) {
+    this.ajax({
+      method: 'DELETE',
+      url: this.url + '/reminders/' + id,
+      headers: {
+        Authorization: 'Token token=' + token
+      },
+      dataType: 'json'
+    }, callback);
+  }
 };
