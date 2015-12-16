@@ -38,7 +38,7 @@ var cb = {
       user.phone_number = data.user.phone_number;
       $('#login-nav').find('input').val('');
       ux.afterLogin();
-      api.indexReminder(cb.indexReminderCB);
+      api.indexReminder(user.id, cb.indexReminderCB);
     }
   },
 
@@ -56,7 +56,7 @@ var cb = {
       console.log(err);
     } else {
       console.log(data);
-      api.indexReminder(cb.indexReminderCB);
+      api.indexReminder(user.id, cb.indexReminderCB);
     }
   },
 
