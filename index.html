@@ -23,6 +23,7 @@
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
     <script src="datetimepicker_css.js"></script>
+    <script type="text/javascript" src="js/handlebars-v3.0.3.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -217,22 +218,23 @@
                 <div id='reminderInput'>
                     <form id="reminderForm">
                       <div style="text-align:center; margin:150px auto 100px auto;">
+                         <label for="inputMessage">Message</label>
                          <input name="message" type="text" id="inputMessage" placeholder="Message" required>
-                         <label for="remind">Please enter a date here &gt;&gt; </label>
-                         <input name="datetime" type="text" id="remind" maxlength="25" size="25" placeholder="Date" required/>
-                         <img src="images2/cal.gif" onclick="javascript:NewCssCal ('remind','MMddyyyy','arrow',true,'12', false, 'future')" style="cursor:pointer"/>
-                         <button type="submit">Submit</button>
+                         <label for="inputDatetime">Send Date and Time</label>
+                         <input name="send_date" type="text" id="inputDatetime" maxlength="25" size="25" placeholder="Use the button on the right to enter" required/>
+                         <img src="images2/cal.gif" onclick="javascript:NewCssCal ('inputDatetime','MMddyyyy','arrow',true,'12', false, 'future')" style="cursor:pointer"/>
+                         <button type="submit" class="btn btn-default">Submit</button>
                        </div>
                     </form>
                 </div>
 
-                <table class="table table-striped">
-                    <thead>
+                <table class="table">
+                    <thead class="tableheader">
                       <tr>
-                        <th class="tableheader">Edit</th>
-                        <th class="tableheader">Message</th>
-                        <th class="tableheader">Send Date</th>
-                        <th class="tableheader">Delete</th>
+                        <th class="tableheader">EDIT</th>
+                        <th class="tableheader">MESSAGE</th>
+                        <th class="tableheader">SEND DATE/TIME</th>
+                        <th class="tableheader">DELETE</th>
                       </tr>
                     </thead>
 
@@ -240,10 +242,10 @@
                       <script id="reminders-index" type="text/x-handlebars-template">
                           {{#each reminders}}
                           <tr>
-                            <td><button data-reminder-id={{id}} data-button="rate" type="button" class="btn btn-success ratedbtn">Edit</button></td>
+                            <td><button data-reminder-id={{id}} data-button="rate" type="button" class="btn btn-edit">Edit</button></td>
                             <td>{{message}}</td>
                             <td>{{send_date}}</td>
-                            <td><button data-reminder-id={{id}} data-button="result" type="button" class="btn btn-warning">Delete</button></td>
+                            <td><button data-reminder-id={{id}} data-button="result" type="button" class="btn btn-delete">Delete</button></td>
                           </tr>
                           {{/each}}
                       </script>

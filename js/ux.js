@@ -3,8 +3,8 @@
 var ux = {
 
   init: function () {
-    $('#registerMenu').show();
-    $('#loginMenu').hide();
+    $('#registerMenu').hide();
+    $('#loginMenu').show();
     $('#reminderButton').hide();
     $('#logoutButton').hide();
     $('#reminder').hide();

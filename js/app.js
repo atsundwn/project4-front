@@ -28,6 +28,7 @@ var wrap = function wrap(root, formData) {
 $(document).ready(function () {
 
   ux.init();
+  cb.init();
 
   // Register form handler
   $('#register-nav').on('submit', function (e) {
@@ -61,6 +62,14 @@ $(document).ready(function () {
   $('#logoutButton').on('click', function (e) {
     e.preventDefault();
     api.logout(user.id, user.token, cb.logoutCB);
+  });
+
+  // Reminder submit button handler
+  $('#reminderForm').on('submit', function (e) {
+    e.preventDefault();
+    var reminder = wrap('reminder', form2object(this));
+    console.log(reminder);
+    api.createReminder(reminder, user.token, cb.createReminderCB);
   });
 
 

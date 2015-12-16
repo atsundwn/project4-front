@@ -31,6 +31,15 @@ var api = {
     }, callback);
   },
 
+  indexReminder: function(callback) {
+    this.ajax({
+      method: 'GET',
+      url: this.url + '/reminders',
+      contentType: 'application/json'
+      //dataType: 'json'
+    }, callback);
+  },
+
   //Authenticated api actions
 
   logout: function (id, token, callback) {
@@ -50,7 +59,7 @@ var api = {
       headers: {
         Authorization: 'Token token=' + token
       },
-      data: JSON.stringify(data),
+      data: data,
       dataType: 'json'
     }, callback);
   },
