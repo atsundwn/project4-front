@@ -1,7 +1,8 @@
 'use strict';
 
 var api = {
-  url: 'http://localhost:3000',
+  // url: 'http://localhost:3000',
+  url: 'https://calm-hamlet-6031.herokuapp.com/',
 
   ajax: function(config, cb) {
     $.ajax(config).done(function(data, textStatus, jqxhr) {
