@@ -222,7 +222,7 @@
                          <input name="message" type="text" id="inputMessage" placeholder="Message" required>
                          <label for="inputDatetime">Send Date and Time</label>
                          <input name="send_date" type="text" id="inputDatetime" maxlength="25" size="25" placeholder="Use the button on the right to enter" required/>
-                         <img src="images2/cal.gif" onclick="javascript:NewCssCal ('inputDatetime','MMddyyyy','arrow',true,'12', false, 'future')" style="cursor:pointer"/>
+                         <img src="images2/cal.gif" onclick="javascript:NewCssCal ('inputDatetime','MMddyyyy','arrow',true,'24', false, 'future')" style="cursor:pointer"/>
                          <button type="submit" class="btn btn-default">Submit</button>
                        </div>
                     </form>
@@ -242,14 +242,14 @@
                       <script id="reminders-index" type="text/x-handlebars-template">
                           {{#each reminders}}
                           <tr>
-                            <td>{{#ifSent sent? value=false}}<button data-reminder-id={{id}} data-button="edit" type="button" class="btn btn-edit">Edit</button>
+                            <td>{{#ifSent sent value=false}}<button data-reminder-id={{id}} data-button="edit" type="button" class="btn btn-edit">Edit</button>
                                 {{else}}
                                 <button data-button="sent" type="button" class="btn btn-default">SENT</button>
                                 {{/ifSent}}
                             </td>
                             <td>{{message}}</td>
                             <td>{{send_date}}</td>
-                            <td>{{#ifSent sent? value=false}}<button data-reminder-id={{id}} data-button="delete" type="button" class="btn btn-delete">X</button>
+                            <td>{{#ifSent sent value=false}}<button data-reminder-id={{id}} data-button="delete" type="button" class="btn btn-delete">X</button>
                                 {{else}}
                                 <button data-button="sent" type="button" class="btn btn-default">SENT</button>
                                 {{/ifSent}}
@@ -272,7 +272,7 @@
                          <input name="message" type="text" id="editMessage" placeholder="Message" required>
                          <label for="editDatetime">Send Date and Time</label>
                          <input name="send_date" type="text" id="editDatetime" maxlength="25" size="25" placeholder="Use the button on the right to enter" required/>
-                         <img src="images2/cal.gif" onclick="javascript:NewCssCal ('editDatetime','MMddyyyy','arrow',true,'12', false, 'future')" style="cursor:pointer"/>
+                         <img src="images2/cal.gif" onclick="javascript:NewCssCal ('editDatetime','MMddyyyy','arrow',true,'24', false, 'future')" style="cursor:pointer"/>
                          <button type="submit" class="btn btn-default">Submit</button>
                          <button type="submit" id="cancelEdit" class="btn btn-delete">Cancel</button>
                        </div>
