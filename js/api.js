@@ -2,7 +2,7 @@
 
 var api = {
   // url: 'http://localhost:3000',
-  url: 'https://calm-hamlet-6031.herokuapp.com/',
+  url: 'https://calm-hamlet-6031.herokuapp.com',
 
   ajax: function(config, cb) {
     $.ajax(config).done(function(data, textStatus, jqxhr) {
