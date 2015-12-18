@@ -100,5 +100,11 @@ $(document).ready(function () {
     api.updateReminder(user.reminder_id, reminder, user.token, cb.updateReminderCB);
   });
 
+  // Refresh button
+  $('#refresh').on('click', function (e) {
+    e.preventDefault();
+    api.indexReminder(user.id, cb.indexReminderCB);
+  });
+
 
 });

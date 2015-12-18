@@ -219,13 +219,16 @@
                     <form id="reminderForm">
                       <div style="text-align:center; margin:150px auto 100px auto;">
                          <label for="inputMessage">Message</label>
-                         <input name="message" type="text" id="inputMessage" placeholder="Message" required>
+                         <input name="message" type="text" id="inputMessage" placeholder="Message 140 Characters Max" required>
                          <label for="inputDatetime">Send Date and Time</label>
                          <input name="send_date" type="text" id="inputDatetime" maxlength="25" size="25" placeholder="Use the button on the right to enter" required/>
                          <img src="images2/cal.gif" onclick="javascript:NewCssCal ('inputDatetime','MMddyyyy','arrow',true,'24', false, 'future')" style="cursor:pointer"/>
                          <button type="submit" class="btn btn-default">Submit</button>
                        </div>
                     </form>
+
+                </div>
+                    <button id="refresh" type="button" class="btn btn-default">Refresh</button>
                 </div>
 
                 <table class="table">
@@ -265,7 +268,7 @@
                     <form id="editReminder">
                       <div style="text-align:center; margin:150px auto 100px auto;">
                          <label for="editMessage">Message</label>
-                         <input name="message" type="text" id="editMessage" placeholder="Message" required>
+                         <input name="message" type="text" id="editMessage" placeholder="Message 140 Characters Max" required>
                          <label for="editDatetime">Send Date and Time</label>
                          <input name="send_date" type="text" id="editDatetime" maxlength="25" size="25" placeholder="Use the button on the right to enter" required/>
                          <img src="images2/cal.gif" onclick="javascript:NewCssCal ('editDatetime','MMddyyyy','arrow',true,'24', false, 'future')" style="cursor:pointer"/>
