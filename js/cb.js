@@ -39,7 +39,7 @@ var cb = {
       user.phone_number = data.user.phone_number;
       $('#login-nav').find('input').val('');
       ux.afterLogin();
-      setInterval(api.indexReminder(user.id, cb.indexReminderCB), 5000);
+      // setInterval(api.indexReminder(user.id, cb.indexReminderCB), 5000);
     }
   },
 

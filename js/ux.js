@@ -28,5 +28,6 @@ var ux = {
     $('#logoutButton').show();
     $('#reminder').show();
     $('#loginMenu').attr('class', 'dropdown');
+    setInterval(api.indexReminder(user.id, cb.indexReminderCB), 5000);
   }
 };
