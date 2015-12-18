@@ -249,11 +249,7 @@
                             </td>
                             <td>{{message}}</td>
                             <td>{{send_date}}</td>
-                            <td>{{#ifSent sent value=false}}<button data-reminder-id={{id}} data-button="delete" type="button" class="btn btn-delete">X</button>
-                                {{else}}
-                                <button data-button="sent" type="button" class="btn btn-default">SENT</button>
-                                {{/ifSent}}
-                            </td>
+                            <td><button data-reminder-id={{id}} data-button="delete" type="button" class="btn btn-delete">X</button></td>
                           </tr>
                           {{/each}}
                       </script>
